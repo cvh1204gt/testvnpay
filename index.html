@@ -6,6 +6,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Cổng thanh toán VNPAY DEMO</title>
+        <!-- Bootstrap core CSS -->
+        
+        <!-- Custom styles for this template -->
+            
+        <script src="/vnpay_jsp/assets/jquery-1.11.3.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -77,7 +86,7 @@
                             <td>299.000 VNĐ</td>
                             <td class="actions">
                                 <button class="btn-action btn-buy">Mua bằng số dư</button>
-                                <button class="btn-action btn-vnpay">Thanh toán bằng VNPay</button>
+                                <button onclick="pay()">Giao dịch thanh toán</button><br>
                             </td>
                         </tr>
                     </tbody>
@@ -86,5 +95,16 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+             function pay() {
+              window.location.href = "/vnpay_jsp/vnpay_pay.jsp";
+            }
+            function querydr() {
+              window.location.href = "/vnpay_jsp/vnpay_querydr.jsp";
+            }
+             function refund() {
+              window.location.href = "/vnpay_jsp/vnpay_refund.jsp";
+            }
+        </script>
 </body>
 </html>

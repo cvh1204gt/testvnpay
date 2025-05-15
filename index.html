@@ -1,101 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Cổng thanh toán VNPAY DEMO</title>
         <!-- Bootstrap core CSS -->
-        
+        <link href="/vnpay_jsp/assets/bootstrap.min.css" rel="stylesheet"/>
         <!-- Custom styles for this template -->
-            
+        <link href="/vnpay_jsp/assets/jumbotron-narrow.css" rel="stylesheet">      
         <script src="/vnpay_jsp/assets/jquery-1.11.3.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <div class="header-left">
-                <div class="logo">LOGO</div>
-                
+    </head>
+
+    <body>
+
+         <div class="container">
+           <div class="header clearfix">
+
+                <h3 class="text-muted">VNPAY DEMO</h3>
             </div>
-         
-            <div class="user-info">
-                <span>User's Name</span>
-                <i class="fas fa-caret-down"></i> </div>
-        </header>
-
-        <div class="main-wrapper">
-            <aside class="sidebar">
-                <nav class="menu">
-                    <ul>
-                        <button class="sidebar-toggle" id="sidebarToggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <li><a href="#"><i class="fa-solid fa-house"></i>Trang chủ</a></li>
-                        <li><a href="#"><i class="fa-solid fa-money-bill-wave"></i>Nạp tiền</a></li>
-                        <li class="active"><a href="#"><i class="fa-solid fa-box"></i>Gói dịch vụ</a></li>
-                        <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử giao dịch</a></li>
-                        <li><a href="#"><i class="fa-solid fa-user"></i>Thông tin cá nhân</a></li>
-                    </ul>
-                </nav>
-            </aside>
-
-            <main class="content">
-                <div class="content-header">
-                    <h1>Gói dịch vụ chưa mua</h1>
-                    <button class="btn-nap-tien">Nạp tiền</button>
+                <div class="form-group">
+                    <button onclick="pay()">Giao dịch thanh toán</button><br>
                 </div>
-
-                <table class="service-table">
-                    <thead>
-                        <tr>
-                            <th>Tên gói</th>
-                            <th>Mô tả</th>
-                            <th>Giá</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Gói doanh nghiệp</td>
-                            <td>Gói dịch vụ cao cấp</td>
-                            <td>499.000 VNĐ</td>
-                            <td class="actions">
-                                <button class="btn-action btn-buy">Mua bằng số dư</button>
-                                <button class="btn-action btn-vnpay">Thanh toán bằng VNPay</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gói cơ bản</td>
-                            <td>Gói dịch vụ cơ bản</td>
-                            <td>99.000 VNĐ</td>
-                            <td class="actions">
-                                <button class="btn-action btn-buy">Mua bằng số dư</button>
-                                <button class="btn-action btn-vnpay">Thanh toán bằng VNPay</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gói nâng cao</td>
-                            <td>Gói nâng cao với nhiều tính năng hơn</td>
-                            <td>299.000 VNĐ</td>
-                            <td class="actions">
-                                <button class="btn-action btn-buy">Mua bằng số dư</button>
-                                <button onclick="pay()">Giao dịch thanh toán</button><br>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </main>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script>
+                <div class="form-group">
+                    <button onclick="querydr()">API truy vấn kết quả thanh toán</button><br>
+                </div>
+                <div class="form-group">
+                    <button onclick="refund()">API hoàn tiền giao dịch</button><br>
+                </div>
+            <p>
+                &nbsp;
+            </p>
+            <footer class="footer">
+                <p>&copy; VNPAY 2020</p>
+            </footer>
+        </div> 
+        <script>
              function pay() {
               window.location.href = "/vnpay_jsp/vnpay_pay.jsp";
             }
@@ -106,5 +49,5 @@
               window.location.href = "/vnpay_jsp/vnpay_refund.jsp";
             }
         </script>
-</body>
+    </body>
 </html>
